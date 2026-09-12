@@ -1,4 +1,4 @@
-import Task from "../models/Task";
+import Task from "../models/Task.js";
 
 // create new task
 export const createTask = async (req, res) => {
@@ -42,6 +42,23 @@ export const createTask = async (req, res) => {
 // get tasks for logged in user
 export const getMyTasks = async (req, res) => {
   try {
+    const { status } = req.query;
+
+    const query = {
+      $or: [{ creator: req.user._id }, { assignedUser: req.user._id }],
+    };
+
+    // status filter
+    if (status) {
+      if (!["todo", "doing", "done"].includes(status)) {
+        return res.status(400).json({
+          message: "Invalid task status",
+        });
+      }
+
+      query.status = status;
+    }
+
     const tasks = await Task.find({
       $or: [{ creator: req.user._id }, { assignedUser: req.user._id }],
     })
@@ -69,7 +86,7 @@ export const getTaskById = async (req, res) => {
 
     const task = await Task.findById(id)
       .populate("creator", "name email role")
-      .populate("assignedUser", "name email, role");
+      .populate("assignedUser", "name email role");
 
     if (!task) {
       return res.status(404).json({
@@ -84,7 +101,10 @@ export const getTaskById = async (req, res) => {
       task.assignedUser &&
       task.assignedUser._id.toString() === req.user._id.toString();
 
-    if (!isCreator && !isAssigned) {
+    // admins can view any tasks
+    const isAdmin = req.user.role === "admin";
+
+    if (!isCreator && !isAssigned && !isAdmin) {
       return res.status(403).json({
         message: "You are not allowed to access this task",
       });
