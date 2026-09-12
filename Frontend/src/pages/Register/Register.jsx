@@ -329,10 +329,10 @@ export default function Register() {
 
             <div className="my-5 flex items-center gap-4">
               <div className="h-px flex-1 bg-[#e8ebe6]" />
-              <span className="text-sm font-medium text-[#a0a7a0]">
+              <span className="text-sm text-[#8b938b]">
                 Already part of Taskly?
               </span>
-              <Link className="text-sm font-medium text-[#719571] underline">
+              <Link to="/login" className="font-bold text-[#66855b] transition hover:text-[#4f7047]">
                 Sign In
               </Link>
               <div className="h-px flex-1 bg-[#e8ebe6]" />

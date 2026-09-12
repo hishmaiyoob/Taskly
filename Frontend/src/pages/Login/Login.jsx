@@ -81,127 +81,128 @@ export default function Login() {
   };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fcfbf7]">
+    <main className="h-screen overflow-hidden bg-[#fcfbf7]">
       <div className="relative mx-auto h-screen w-full overflow-hidden sm:min-h-[calc(100vh-3rem)]">
         <div className="pointer-events-none absolute -right-24 bg-[#dceece] -top-24 h-80 w-80 rounded-full opacity-70 blur-2xl" />
         <div className="pointer-events-none absolute -bottom-32 bg-[#fce3c9] left-1/3 h-80 w-80 rounded-full opacity-70 blur-3xl" />
 
-        <div className="relative z-10 flex items-center justify-center min-h-[calc(100vh-7rem)] px-5 pb-10 sm:px-10 lg:px-16 ">
+        <div className="relative z-10 flex h-full items-center justify-center px-5 sm:px-10 lg:px-16">
           <div className="grid w-full items-center gap-10 max-w-6xl lg:grid-cols-[1fr_460px] lg:gap-20">
             {/* left */}
-            <section className="hidden lg:block mt-10">
-              <div className="mt-8 mb-4 inline-flex items-center gap-2 border border-[#dbe5d5] rounded-full bg-white/70 px-4 py-2 text-xs font-bold tracking-wide text-[#637d58] shadow-sm backdrop-blur">
+            {/* left */}
+            <section className="hidden lg:block w-full">
+              <div className="mt-4 mb-4 inline-flex items-center gap-2 border border-[#dbe5d5] rounded-full bg-white/70 px-4 py-2 text-xs font-bold tracking-wide text-[#637d58] shadow-sm backdrop-blur">
                 <Sparkles size={14} />
                 YOUR WORKSPACE AWAITS
               </div>
 
-              <h1 className="max-w-2xl text-6xl text-[#243027] font-extrabold tracking-[-0.055em] xl:text-7xl">
+              <h1 className="max-w-2xl text-5xl text-[#243027] font-extrabold tracking-[-0.055em] xl:text-6xl">
                 Pick up
                 <span className="block text-[#78966a]">
                   where you left off.
                 </span>
               </h1>
 
-              <p className="mt-3 max-w-7xl text-base leading-6 text-[#737c73]">
+              <p className="mt-3 max-w-xl text-sm leading-6 text-[#737c73]">
                 Your tasks, ideas, priorities, and progress are all waiting for
                 you. Sign in and get back to meaningful work without unnecessary
                 complexity.
               </p>
 
-              <div className="mt-6 max-w-xl border border-[#e0e6dc] rounded-[1.7em] bg-white/80 p-4 shadow-[0_18px_50px_rgba(36,48,39,0.07)] backdrop-blur">
-                <div className="bg-[#f5f7f2] rounded-[1.25em] p-4">
+              <div className="mt-5 max-w-lg border border-[#e0e6dc] rounded-[1.7em] bg-white/80 p-3 shadow-[0_18px_50px_rgba(36,48,39,0.07)] backdrop-blur">
+                <div className="bg-[#f5f7f2] rounded-[1.25em] p-3">
                   {/* mini top bar */}
-                  <div className="mb-5 flex items-center justify-between">
+                  <div className="mb-4 flex items-center justify-between">
                     <div>
-                      <div className="bg-[#ccd8c6] rounded-full h-2.5 w-24" />
-                      <div className="bg-[#e0e6dc] mt-2 rounded-full h-2 w-16" />
+                      <div className="bg-[#ccd8c6] rounded-full h-2 w-20" />
+                      <div className="bg-[#e0e6dc] mt-2 rounded-full h-1.5 w-14" />
                     </div>
 
                     <div className="flex -space-x-2">
-                      <div className="border border-[#f5f7f2] h-7 w-7 rounded-full bg-[#e7b98e]" />
-                      <div className="border border-[#f5f7f2] h-7 w-7 rounded-full bg-[#b8d7a8]" />
-                      <div className="border border-[#f5f7f2] h-7 w-7 rounded-full bg-[#f3c99d]" />
+                      <div className="border border-[#f5f7f2] h-6 w-6 rounded-full bg-[#e7b98e]" />
+                      <div className="border border-[#f5f7f2] h-6 w-6 rounded-full bg-[#b8d7a8]" />
+                      <div className="border border-[#f5f7f2] h-6 w-6 rounded-full bg-[#f3c99d]" />
                     </div>
                   </div>
 
                   {/* mini board */}
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="bg-white p-3 rounded-xl">
-                      <div className="flex justify-between items-center mb-3">
-                        <span className="text-[9px] font-bold uppercase tracking-wide text-[#8a9389]">
+                  <div className="grid grid-cols-3 gap-2.5">
+                    <div className="bg-white p-2.5 rounded-xl">
+                      <div className="flex justify-between items-center mb-2.5">
+                        <span className="text-[8px] font-bold uppercase tracking-wide text-[#8a9389]">
                           To Do
                         </span>
 
-                        <span className="text-[9px] font-bold text-[#b0b7ae]">
+                        <span className="text-[8px] font-bold text-[#b0b7ae]">
                           3
                         </span>
                       </div>
 
-                      <div className="space-y-2">
-                        <div className="h-12 bg-[#fff7ec] p-2 rounded-lg">
-                          <div className="bg-[#e9c79f] h-1.5 w-16 rounded-full" />
-                          <div className="bg-[#eee4d7] mt-2 h-1 w-10 rounded-full" />
+                      <div className="space-y-1.5">
+                        <div className="h-10 bg-[#fff7ec] p-1.5 rounded-lg">
+                          <div className="bg-[#e9c79f] h-1.5 w-12 rounded-full" />
+                          <div className="bg-[#eee4d7] mt-1.5 h-1 w-8 rounded-full" />
                         </div>
 
-                        <div className="bg-[#fafbf8] h-10 rounded-lg" />
+                        <div className="bg-[#fafbf8] h-8 rounded-lg" />
                       </div>
                     </div>
 
-                    <div className="bg-white p-3 rounded-xl">
-                      <div className="flex justify-between items-center mb-3">
-                        <span className="text-[9px] font-bold uppercase tracking-wide text-[#8a9389]">
+                    <div className="bg-white p-2.5 rounded-xl">
+                      <div className="flex justify-between items-center mb-2.5">
+                        <span className="text-[8px] font-bold uppercase tracking-wide text-[#8a9389]">
                           Doing
                         </span>
 
-                        <span className="text-[9px] font-bold text-[#b0b7ae]">
+                        <span className="text-[8px] font-bold text-[#b0b7ae]">
                           2
                         </span>
                       </div>
 
-                      <div className="space-y-2">
-                        <div className="h-12 bg-[#eef5e9] p-2 rounded-lg">
-                          <div className="bg-[#a8c597] h-1.5 w-16 rounded-full" />
-                          <div className="bg-[#dfe9da] mt-2 h-1 w-10 rounded-full" />
+                      <div className="space-y-1.5">
+                        <div className="h-10 bg-[#eef5e9] p-1.5 rounded-lg">
+                          <div className="bg-[#a8c597] h-1.5 w-12 rounded-full" />
+                          <div className="bg-[#dfe9da] mt-1.5 h-1 w-8 rounded-full" />
                         </div>
 
-                        <div className="bg-[#fafbf8] h-10 rounded-lg" />
+                        <div className="bg-[#fafbf8] h-8 rounded-lg" />
                       </div>
                     </div>
 
-                    <div className="bg-white p-3 rounded-xl">
-                      <div className="flex justify-between items-center mb-3">
-                        <span className="text-[9px] font-bold uppercase tracking-wide text-[#8a9389]">
+                    <div className="bg-white p-2.5 rounded-xl">
+                      <div className="flex justify-between items-center mb-2.5">
+                        <span className="text-[8px] font-bold uppercase tracking-wide text-[#8a9389]">
                           Done
                         </span>
 
-                        <span className="text-[9px] font-bold text-[#b0b7ae]">
+                        <span className="text-[8px] font-bold text-[#b0b7ae]">
                           4
                         </span>
                       </div>
 
-                      <div className="space-y-2">
-                        <div className="h-12 bg-[#f1f4ee] p-2 rounded-lg">
-                          <div className="bg-[#b7c5b1] h-1.5 w-16 rounded-full" />
-                          <div className="bg-[#e0e6dc] mt-2 h-1 w-10 rounded-full" />
+                      <div className="space-y-1.5">
+                        <div className="h-10 bg-[#f1f4ee] p-1.5 rounded-lg">
+                          <div className="bg-[#b7c5b1] h-1.5 w-12 rounded-full" />
+                          <div className="bg-[#e0e6dc] mt-1.5 h-1 w-8 rounded-full" />
                         </div>
 
-                        <div className="bg-[#fafbf8] h-10 rounded-lg" />
+                        <div className="bg-[#fafbf8] h-8 rounded-lg" />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-4 flex items-center gap-3 px-2">
-                  <div className="flex items-center justify-center h-8 w-8 rounded-full bg-[#dceece] text-[#66855b]">
-                    <Check size={15} strokeWidth={3} />
+                <div className="mt-3 flex items-center gap-3 px-2">
+                  <div className="flex items-center justify-center h-7 w-7 rounded-full bg-[#dceece] text-[#66855b]">
+                    <Check size={14} strokeWidth={3} />
                   </div>
 
                   <div>
-                    <p className="text-xs font-bold text-[#435044]">
+                    <p className="text-[11px] font-bold text-[#435044]">
                       Your team is moving forward
                     </p>
 
-                    <p className="mt-0.5 text-[11px] text-[#909990]">
+                    <p className="mt-0.5 text-[10px] text-[#909990]">
                       Everything stays organized in one place.
                     </p>
                   </div>
@@ -210,7 +211,7 @@ export default function Login() {
             </section>
 
             {/* login card */}
-            <section className="w-full mt-20">
+            <section className="w-full">
               {/* mobile heading */}
               <div className="mb-7 text-center lg:hidden">
                 <div className="mx-auto flex items-center justify-center h-12 w-12 mb-5 bg-[#dceece] text-[#617e55] rounded-2xl">
