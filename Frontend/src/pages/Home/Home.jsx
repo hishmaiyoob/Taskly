@@ -5,6 +5,7 @@ import {
   ChevronRight,
   CircleCheck,
   LayoutDashboard,
+  LockKeyhole,
   Menu,
   MoveRight,
   Play,
@@ -187,154 +188,290 @@ export default function Home() {
             </div>
 
             {/* hero product */}
-            <div className="relative mx-auto mt-16 max-w-6xl">
-              <div className="absolute -inset-10 -z-10 bg-[#eaf4e2] rounded-full blur-3xl" />
+            <div className="relative w-full overflow-hidden mt-20 h-130">
+              {/* decor */}
+              <div className="pointer-events-none absolute left-[12%] top-[20%] bg-[#e5f4d9] rounded-full h-72 w-72 blur-3xl opacity-70" />
+              <div className="pointer-events-none absolute right-[15%] top-[5%] bg-[#fce3c9] rounded-full h-64 w-64 blur-3xl opacity-70" />
 
-              <div className="overflow-hidden border border-[#dddcd4] rounded-3xl bg-white shadow-[0_30px_80px_rgba(50,60,45,0.12)]">
-                {/* browser bar */}
-                <div className="flex h-12 items-center gap-2 border-b border-[#e9e8e2] bg-[#fafaf7] px-5">
-                  <span className="h-2.5 w-2.5 bg-[#d7d8d1] rounded-full" />
-                  <span className="h-2.5 w-2.5 bg-[#d7d8d1] rounded-full" />
-                  <span className="h-2.5 w-2.5 bg-[#d7d8d1] rounded-full" />
+              {/* decorive dots */}
+              <div className="absolute bg-[#b8d49f] h-3 w-3 rounded-full left-[10%] top-[12%] sm:block hidden" />
+              <div className="absolute bg-[#e5aa70] h-2 w-2 rounded-full left-[28%] bottom-[14%] sm:block hidden" />
+              <div className="absolute bg-[#c7d9bc] h-2 w-2 rounded-full right-[42%] top-[10%] sm:block hidden" />
 
-                  <div className="mx-auto hidden h-7 bg-white border border-[#ecebe5] w-80 rounded-lg sm:block" />
+              {/* left - card */}
+              <div className="absolute border border-[#e2e6dc] w-64 p-4 rounded-2xl left-[2%] top-[24%] bg-white sm:block hidden rotate-[-7deg] shadow-[0_25px_55px_rgba(36,48,39,0.12)] transition duration-300 hover:-translate-y-2 hover:rotate-[-4deg]">
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="bg-[#fff1e2] rounded-full px-2.5 py-1 text-[10px] text-[#a66f3f] font-bold">
+                    Design
+                  </span>
+
+                  <span className="text-[11px] text-[#a3aaa2]">Today</span>
                 </div>
 
-                <div className="flex min-h-125">
-                  {/* sidebar */}
-                  <aside className="hidden w-56 bg-white border-r border-[#e9e8e2] p-5 sm:block">
-                    <div className="flex items-center gap-2.5">
-                      <div className="flex items-center justify-center bg-[#c9e9b5] h-8 w-8 rounded-lg">
-                        <Check scale={16} />
-                      </div>
-                      <span className="font-bold">Taskly</span>
+                <h3 className="text-sm font-bold text-[#29342c]">
+                  Design onboarding flow
+                </h3>
+
+                <p className="mt-2 text-[11px] text-[#8b948c] leading-5">
+                  Create a simpler first-time experience for new users.
+                </p>
+
+                <div className="mt-5 flex items-center justify-between ">
+                  <div className="flex -space-x-2">
+                    <div className="flex items-center justify-center h-7 w-7 bg-[#d9b18a] text-white rounded-full border-2 border-white text-[8px] font-bold">
+                      JD
                     </div>
 
-                    <p className="mb-3 mt-9 px-2 text-[10px] uppercase font-bold tracking-widest text-[#a0a79f]">
-                      Workspace
+                    <div className="flex items-center justify-center h-7 w-7 bg-[#abc99b] text-white rounded-full border-2 border-white text-[8px] font-bold">
+                      AM
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-1 text-[10px] text-[#899289] font-semibold">
+                    <CircleCheck size={13} className="text-[#7ca46c]" />
+                    2/4
+                  </div>
+                </div>
+              </div>
+
+              {/* upper left - card */}
+              <div className="absolute border border-[#e2e6dc] p-4 w-52 rounded-2xl bg-[#f9fbf7] left-[20%] top-[7%] sm:block hidden rotate-[4deg] shadow-[0_20px_45px_rgba(36,48,39,0.08)]">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-center h-9 w-9 bg-[#dceece] rounded-xl text-[#66855b]">
+                    <Check size={17} strokeWidth={2.5} />
+                  </div>
+
+                  <span className="font-bold uppercase text-[10px] text-[#a0a79f] tracking-wider">
+                    Done
+                  </span>
+                </div>
+
+                <p className="mt-4 text-[#39443b] text-xs font-bold">
+                  Project structure
+                </p>
+
+                <div className="mt-3 h-1.5 w-full bg-[#e4e9df] rounded-full">
+                  <div className="bg-[#8cad7b] h-1.5 w-full rounded-full" />
+                </div>
+              </div>
+
+              {/* center card */}
+              <div className="absolute w-72 border border-[#e1e5dc] p-5 rounded-2xl bg-white left-[27%] top-[40%] z-20 sm:block hidden rotate-2 shadow-[0_30px_65px_rgba(36,48,39,0.14)] transition duration-300 hover:-translate-y-2 hover:rotate-0">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-[10px] uppercase font-bold tracking-[0.15em] text-[#9aa29a]">
+                      In progress
                     </p>
 
-                    <div className="space-y-1">
-                      <SidebartItems
-                        icon={<LayoutDashboard size={16} />}
-                        text="Overview"
-                        active
-                      />
-                      <SidebartItems
-                        icon={<Check size={16} />}
-                        text="My Tasks"
-                      />
-                      <SidebartItems
-                        icon={<LayoutDashboard size={16} />}
-                        text="Task Board"
-                      />
-                    </div>
+                    <h3 className="mt-1 text-[#29342c] text-base font-bold">
+                      Build authentication
+                    </h3>
+                  </div>
 
-                    <p className="mb-3 mt-9 px-2 text-[10px] uppercase font-bold tracking-widest text-[#a0a79f]">
-                      Workspace
+                  <div className="flex items-center justify-center w-9 h-9 bg-[#eef5e9] rounded-xl text-[#668354]">
+                    <LockKeyhole size={16} />
+                  </div>
+                </div>
+
+                <p className="mt-3 text-[#858e86] text-xs leading-5">
+                  Secure login, registration and role-based access.
+                </p>
+
+                <div className="mt-5 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="bg-[#b9d4a9] h-7 w-7 rounded-full" />
+
+                    <span className="text-[#737d74] text-[10px] font-semibold">
+                      Alex
+                    </span>
+                  </div>
+
+                  <span className="bg-[#fff6ec] rounded-full text-[10px] px-2.5 py-1 font-bold text-[#a66f3f]">
+                    Development
+                  </span>
+                </div>
+              </div>
+
+              {/* small notification */}
+              <div className="absolute w-48 border border-[#e3e7df] p-3.5 rounded-2xl lg:block hidden bg-white/95 left-[7%] bottom-[13%] rotate-[5deg] shadow-[0_20px_45px_rgba(36,48,39,0.1)] backdrop-blur">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center h-9 w-9 shrink-0 bg-[#c9e9b5] rounded-xl text-[#557449]">
+                    <CircleCheck size={17} />
+                  </div>
+
+                  <div>
+                    <p className="text-[11px] font-bold text-[#3b473d]">
+                      Task complete
                     </p>
 
-                    <SidebartItems icon={<Users size={16} />} text="Team" />
-                  </aside>
+                    <p className="mt-0.5 text-[9px] text-[#929a92]">
+                      Database schema
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-                  {/* dashboard */}
-                  <div className="flex-1 bg-[#fafbf8] p-5 sm:p-8">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-xs text-[#929a92]">
-                          Tuesday, September 8
-                        </p>
-
-                        <h3 className="mt-1 text-xl font-bold">
-                          Good morning, Jack
-                        </h3>
+              {/* right */}
+              <div className="absolute w-162.5 right-[-18%] top-[5%] -rotate-3 sm:right-[-13%] lg:right-[-8%] xl:right-[-3%]">
+                <div className="border border-[#dfe4da] bg-white p-2 rounded-4xl shadow-[0_35px_90px_rgba(36,48,39,0.16)]">
+                  {/* top bar */}
+                  <div className="flex items-center justify-between h-12 border-b border-[#edf0ea] px-5">
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center justify-center h-7 w-7 bg-[#c9e9b5] rounded-lg">
+                        <Check size={14} />
                       </div>
 
-                      <button className="bg-[#243027] text-xs text-white px-4 py-2.5 rounded-xl font-semibold hidden sm:block">
-                        + New task
-                      </button>
+                      <span className="text-[#303b32] text-xs font-bold">
+                        Taskly
+                      </span>
                     </div>
 
-                    {/* stats */}
-                    <div className="mt-7 grid grid-cols-3 gap-3">
-                      <StatsCard
-                        number="24"
-                        label="Total tasks"
-                        bg="bg-[#f4f7ef]"
-                      />
+                    <div className="flex items-center gap-2">
+                      <div className="bg-[#f3f5f1] h-7 w-20 rounded-lg" />
+                      <div className="bg-[#b9d4a9] h-7 w-7 rounded-full" />
+                    </div>
+                  </div>
 
-                      <StatsCard
-                        number="08"
-                        label="In progress"
-                        bg="bg-[#fff6ec]"
-                      />
-                      <StatsCard
-                        number="16"
-                        label="Completed"
-                        bg="bg-[#f0f6f0]"
-                      />
+                  <div className="flex min-h-97.5">
+                    {/* mini sidebar */}
+                    <div className="w-36 bg-[#fcfdfb] border-r border-[#edf0ea] p-4 shrink-0">
+                      <div className="mb-7 bg-[#dfe6db] h-2 w-16 rounded-full" />
+
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 bg-[#eef5e9] rounded-lg px-2.5 py-2">
+                          <LayoutDashboard
+                            size={12}
+                            className="text-[#6d8c60]"
+                          />
+                          <span className="text-[9px] text-[#668354] font-bold">
+                            Overview
+                          </span>
+                        </div>
+
+                        <div className="flex items-center gap-2 px-2.5 py-2">
+                          <Check size={12} className="text-[#a2aaa2]" />
+                          <span className="text-[9px] text-[#8d968e]">
+                            My Tasks
+                          </span>
+                        </div>
+
+                        <div className="flex items-center gap-2 px-2.5 py-2">
+                          <LayoutDashboard
+                            size={12}
+                            className="text-[#a2aaa2]"
+                          />
+                          <span className="text-[9px] text-[#8d968e]">
+                            Board
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="bg-[#e5e9e2] h-2 w-20 mt-10 rounded-full" />
+
+                      <div className="mt-4 h-7 rounded-lg bg-[#f4f6f2]" />
+                      <div className="mt-2 h-7 rounded-lg bg-[#f4f6f2]" />
                     </div>
 
-                    {/* board */}
-                    <div className="mt-7 grid grid-cols-3 gap-3">
-                      <BoardColumn title="To Do" count="3" dot="bg-[#adb5ab]">
-                        <TaskCard
-                          title="Design onboarding flow"
-                          tag="Design"
-                          initials="JD"
-                          tagBg="bg-[#fff1e2]"
-                          tagText="text-[#a66f3f]"
-                        />
+                    {/* dashboard content */}
+                    <div className="flex-1 bg-[#fafbf8] p-6">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="bg-[#d8dfd5] h-2 w-24 rounded-full" />
 
-                        <TaskCard
-                          title="Prepare API documentation"
-                          tag="Docs"
-                          initials="AM"
-                          tagBg="bg-[#eef5e9]"
-                          tagText="text-[#668354]"
-                        />
-                      </BoardColumn>
+                          <div className="mt-2 bg-[#c7d2c3] h-4 w-40 rounded-full" />
+                        </div>
 
-                      <BoardColumn title="Doing" count="2" dot="bg-[#e5a65f]">
-                        <TaskCard
-                          title="Build authentication"
-                          tag="Development"
-                          initials="AK"
-                          tagBg="bg-[#eaf4e4]"
-                          tagText="text-[#668354]"
-                        />
+                        <div className="bg-[#243027] h-8 w-20 rounded-lg" />
+                      </div>
 
-                        <TaskCard
-                          title="Create dashboard UI"
-                          tag="Frontend"
-                          initials="JD"
-                          tagBg="bg-[#fff1e2]"
-                          tagText="text-[#a66f3f]"
-                        />
-                      </BoardColumn>
+                      {/* mini stats */}
+                      <div className="mt-6 grid grid-cols-3 gap-3">
+                        <div className="bg-[#eef5e9] p-4 rounded-xl">
+                          <div className="bg-[#b7cda9] h-5 w-10 rounded" />
+                          <div className="bg-[#d6e3d0] mt-2 h-2 w-16 rounded" />
+                        </div>
 
-                      <BoardColumn title="Done" count="4" dot="bg-[#80a76b]">
-                        <TaskCard
-                          title="Setup project structure"
-                          tag="Development"
-                          initials="AM"
-                          completed
-                          tagBg="bg-[#eef5e9]"
-                          tagText="text-[#668354]"
-                        />
+                        <div className="bg-[#fff5e9] p-4 rounded-xl">
+                          <div className="bg-[#e6bf91] h-5 w-10 rounded" />
+                          <div className="bg-[#f0dfcb] mt-2 h-2 w-16 rounded" />
+                        </div>
 
-                        <TaskCard
-                          title="Create database schema"
-                          tag="Backend"
-                          initials="JD"
-                          completed
-                          tagBg="bg-[#fff1e2]"
-                          tagText="text-[#a66f3f]"
-                        />
-                      </BoardColumn>
+                        <div className="bg-[#f1f4ee] p-4 rounded-xl">
+                          <div className="bg-[#b7c5b1] h-5 w-10 rounded" />
+                          <div className="bg-[#dfe5dc] mt-2 h-2 w-16 rounded" />
+                        </div>
+                      </div>
+
+                      {/* mini task board */}
+                      <div className="mt-5 grid grid-cols-3 gap-3">
+                        {/* to do */}
+                        <div className="bg-white p-3 rounded-xl">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[9px] text-[#6f786f] font-bold">
+                              TO DO
+                            </span>
+
+                            <span className="text-[8px] text-[#a3aaa3]">3</span>
+                          </div>
+
+                          <div className="mt-3 space-y-2">
+                            <div className="bg-[#fff7ec] p-2.5 rounded-lg">
+                              <div className="bg-[#e7c69e] h-2 w-20 rounded" />
+                              <div className="bg-[#eee2d3] mt-2 h-1.5 w-12 rounded" />
+                            </div>
+
+                            <div className="bg-[#f7f8f5] h-12 rounded-lg" />
+                          </div>
+                        </div>
+
+                        {/* doing */}
+                        <div className="bg-white p-3 rounded-xl">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[9px] text-[#6f786f] font-bold">
+                              DOING
+                            </span>
+
+                            <span className="text-[8px] text-[#a3aaa3]">3</span>
+                          </div>
+
+                          <div className="mt-3 space-y-2">
+                            <div className="bg-[#eef5e9] p-2.5 rounded-lg">
+                              <div className="bg-[#abc89c] h-2 w-20 rounded" />
+                              <div className="bg-[#dbe8d5] mt-2 h-1.5 w-12 rounded" />
+                            </div>
+
+                            <div className="bg-[#f7f8f5] h-12 rounded-lg" />
+                          </div>
+                        </div>
+
+                        {/* done */}
+                        <div className="bg-white p-3 rounded-xl">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[9px] text-[#6f786f] font-bold">
+                              TO DO
+                            </span>
+
+                            <span className="text-[8px] text-[#a3aaa3]">3</span>
+                          </div>
+
+                          <div className="mt-3 space-y-2">
+                            <div className="bg-[#f1f4ee] p-2.5 rounded-lg">
+                              <div className="bg-[#b5c3af] h-2 w-20 rounded" />
+                              <div className="bg-[#dfe5dc] mt-2 h-1.5 w-12 rounded" />
+                            </div>
+
+                            <div className="bg-[#f7f8f5] h-12 rounded-lg" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+
+              <div className="absolute bottom-[7%] right-[27%] hidden rounded-full border border-[#dfe7da] bg-white/90 px-4 py-2 text-[10px] font-bold text-[#66745f] shadow-[0_15px_35px_rgba(36,48,39,0.08)] backdrop-blur lg:flex lg:items-center lg:gap-2">
+                <span className="h-2 w-2 rounded-full bg-[#8caf7b]" />
+                Everything in one place
               </div>
             </div>
           </div>
@@ -563,78 +700,6 @@ export default function Home() {
 }
 
 // components
-function SidebartItems({ icon, text, active }) {
-  return (
-    <div
-      className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-xs font-semibold ${active ? "bg-[#eef5e9] text-[#58734d]" : "text-[#7d857e]"}`}
-    >
-      {icon}
-      {text}
-    </div>
-  );
-}
-
-function StatsCard({ number, label, bg }) {
-  return (
-    <div className={`rounded-2xl border border-[#e8e8e1] ${bg} p-4`}>
-      <p className="text-[11px] font-medium text-[#7d857e]">{label}</p>
-
-      <p className="mt-1 text-2xl font-black tracking-tight">{number}</p>
-    </div>
-  );
-}
-
-function BoardColumn({ title, count, dot, children }) {
-  return (
-    <div>
-      <div className="mb-3 flex items-center gap-2">
-        <span className={`h-2 w-2 rounded-full ${dot}`} />
-
-        <span className="text-xs font-bold">{title}</span>
-
-        <span className="bg-[#eeeee9] rounded-md px-1.5 py-0.5 text-[10px] font-medium text-[#7f877f]">
-          {count}
-        </span>
-      </div>
-
-      <div className="space-y-2.5">{children}</div>
-    </div>
-  );
-}
-
-function TaskCard({ title, tag, initials, completed, tagBg, tagText }) {
-  return (
-    <div className="border border-[#e6e6df] rounded-xl bg-white p-3.5 shadow-sm">
-      <div className="flex items-start justify-between gap-2">
-        <p
-          className={`text-[11px] font-semibold leading-5 ${completed ? "text-[#a0a69f] line-through" : "text-[#344038]"}`}
-        >
-          {title}
-        </p>
-
-        <CircleCheck
-          size={14}
-          className={
-            completed ? "shrink-0 text-[#7aa568]" : "shrink-0 text-[#dfe2dc]"
-          }
-        />
-      </div>
-
-      <div className="mt-4 flex items-center justify-between">
-        <span
-          className={`rounded-md px-2 py-1 text-[9px] font-bold ${tagBg} ${tagText}`}
-        >
-          {tag}
-        </span>
-
-        <div className="flex h-6 w-6 justify-center items-center bg-[#334039] rounded-full font-bold text-[8px] text-white">
-          {initials}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function FeatureCard({ icon: Icon, title, text }) {
   return (
     <div className="group rounded-[22px] border border-[#e5e4dc] bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
