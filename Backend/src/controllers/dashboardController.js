@@ -9,7 +9,7 @@ export const getUserDashboard = async (req, res) => {
       $or: [{ creator: userId }, { assignedUser: userId }],
     });
 
-    const totalTasks = task.length;
+    const totalTasks = tasks.length;
 
     const totdoTasks = tasks.filter((task) => task.status === "todo").length;
 

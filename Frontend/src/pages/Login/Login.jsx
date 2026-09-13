@@ -89,7 +89,6 @@ export default function Login() {
         <div className="relative z-10 flex h-full items-center justify-center px-5 sm:px-10 lg:px-16">
           <div className="grid w-full items-center gap-10 max-w-6xl lg:grid-cols-[1fr_460px] lg:gap-20">
             {/* left */}
-            {/* left */}
             <section className="hidden lg:block w-full">
               <div className="mt-4 mb-4 inline-flex items-center gap-2 border border-[#dbe5d5] rounded-full bg-white/70 px-4 py-2 text-xs font-bold tracking-wide text-[#637d58] shadow-sm backdrop-blur">
                 <Sparkles size={14} />
@@ -313,7 +312,7 @@ export default function Login() {
                       />
 
                       <input
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         name="password"
                         id="password"
                         value={formData.password}
