@@ -186,7 +186,7 @@ export default function TaskCard({
           <div className="flex min-w-0 items-center gap-1.5 text-[10px] text-[#9ba19b]">
             <UserRound size={12} />
 
-            <span className="max-w-[100px] truncate">
+            <span className="max-w-25 truncate">
               {task.assignedUser?.name || "Unassigned"}
             </span>
           </div>

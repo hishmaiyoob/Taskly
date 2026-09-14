@@ -15,7 +15,7 @@ export default function TaskColumn({
   return (
     <section
       ref={setNodeRef}
-      className={`min-h-[500px] rounded-[28px] border border-[#e6e4dc] p-4 transition ${
+      className={`min-h-125 rounded-[28px] border border-[#e6e4dc] p-4 transition ${
         column.color
       } ${isOver ? "ring-2 ring-[#b7dca3] ring-offset-2" : ""}`}
     >
@@ -48,7 +48,7 @@ export default function TaskColumn({
         ))}
 
         {tasks.length === 0 && (
-          <div className="flex min-h-[180px] items-center justify-center rounded-2xl border border-dashed border-[#dcdad2] bg-white/40 px-5 text-center">
+          <div className="flex min-h-45 items-center justify-center rounded-2xl border border-dashed border-[#dcdad2] bg-white/40 px-5 text-center">
             <div>
               <p className="text-sm font-semibold text-[#7c847c]">
                 No tasks here
