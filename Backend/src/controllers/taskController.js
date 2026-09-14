@@ -264,6 +264,7 @@ export const assignTask = async (req, res) => {
       }
 
       task.assignedUser = req.user._id;
+      task.assignedBy = req.user._id;
     }
 
     // admin

@@ -187,7 +187,11 @@ export default function TaskCard({
             <UserRound size={12} />
 
             <span className="max-w-25 truncate">
-              {task.assignedUser?.name || "Unassigned"}
+              {task.assignedUser
+                ? task.assignedBy?.role === "admin"
+                  ? `${task.assignedUser.name} • by admin`
+                  : task.assignedUser.name
+                : "Unassigned"}
             </span>
           </div>
         </div>

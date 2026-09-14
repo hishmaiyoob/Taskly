@@ -64,7 +64,7 @@ export const getAllUsers = async (req, res) => {
 // get all tasks
 export const getAllTasks = async (req, res) => {
   try {
-    const { status, assignedUser } = req.body;
+    const { status, assignedUser } = req.query;
 
     const query = {};
 
@@ -85,6 +85,7 @@ export const getAllTasks = async (req, res) => {
     const tasks = await Task.find(query)
       .populate("creator", "name email role")
       .populate("assignedUser", "name email role")
+      .populate("assignedBy", "name email role")
       .sort({ createdAt: -1 });
 
     return res.status(200).json({
@@ -137,11 +138,13 @@ export const adminAssignTask = async (req, res) => {
 
     // assign
     task.assignedUser = user._id;
+    task.assignedBy = req.user._id;
     await task.save();
 
     const updatedTask = await Task.findById(task._id)
       .populate("creator", "name email role")
-      .populate("assignedUser", "name email role");
+      .populate("assignedUser", "name email role")
+      .populate("assignedBy", "name email role");
 
     return res.status(200).json({
       message: "Task assigned successfully",
