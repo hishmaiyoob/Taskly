@@ -25,7 +25,6 @@ The application provides a task board with three workflow statuses - To Do, Doin
 - Move tasks between To Do, Doing, and Done
 - View task status and assignment information
 
-
 ### Admministrators
 
 - Admin accounts are created through database seeding
@@ -40,9 +39,9 @@ The application provides a task board with three workflow statuses - To Do, Doin
 ### Task Board
 
 - Three status columns:
- - To Do
- - Doing
- - Done
+- To Do
+- Doing
+- Done
 - Drag and drop task cards
 - Task status changes persist in MongoDB
 - Changes remain after refresh
@@ -177,14 +176,14 @@ ADMIN_PASSWORD=your_secure_admin_password
 
 #### Backend variables
 
-| Variable | Description |
-|---|---|
-| `PORT` | Port used by the Express backend |
-| `MONGO_URI` | MongoDB connection string |
-| `JWT_SECRET` | Secret key used to sign JWT tokens |
-| `ADMIN_NAME` | Name used when creating the seeded administrator |
-| `ADMIN_EMAIL` | Email address of the seeded administrator |
-| `ADMIN_PASSWORD` | Password used for the seeded administrator |
+| Variable         | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| `PORT`           | Port used by the Express backend                 |
+| `MONGO_URI`      | MongoDB connection string                        |
+| `JWT_SECRET`     | Secret key used to sign JWT tokens               |
+| `ADMIN_NAME`     | Name used when creating the seeded administrator |
+| `ADMIN_EMAIL`    | Email address of the seeded administrator        |
+| `ADMIN_PASSWORD` | Password used for the seeded administrator       |
 
 ### Frontend environment variables
 
@@ -196,8 +195,8 @@ VITE_API_URL=http://localhost:5000
 
 #### Frontend Variables
 
-| Variable | Description |
-|---|---|
+| Variable       | Description                 |
+| -------------- | --------------------------- |
 | `VITE_API_URL` | Base URL of the backend API |
 
 ### Security
@@ -236,7 +235,6 @@ The seed script:
 The administrator can then log in through normal login page using the seeded credentials.
 
 > For security, administrator credentials should never be commited to the repository. Use environment variables or the final submission document as required.
-
 
 ## User Roles & Permissions
 
@@ -297,45 +295,45 @@ Authorization: Bearer <token>
 
 ### Authentication
 
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| POST | `/api/auth/register` | Public | Register a normal user |
-| POST | `/api/auth/login` | Public | Authenticate a user and return a JWT |
+| Method | Endpoint             | Access | Description                          |
+| ------ | -------------------- | ------ | ------------------------------------ |
+| POST   | `/api/auth/register` | Public | Register a normal user               |
+| POST   | `/api/auth/login`    | Public | Authenticate a user and return a JWT |
 
 ### Users
 
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| GET | `/api/users/me` | Authenticated | Get the currently logged-in user's information |
+| Method | Endpoint        | Access        | Description                                    |
+| ------ | --------------- | ------------- | ---------------------------------------------- |
+| GET    | `/api/users/me` | Authenticated | Get the currently logged-in user's information |
 
 ### Tasks
 
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| POST | `/api/tasks` | Authenticated | Create a task |
-| GET | `/api/tasks/my` | Authenticated | Get tasks available to the current user |
-| GET | `/api/tasks/:id` | Authenticated | Get a specific task |
-| PUT | `/api/tasks/:id` | Authenticated | Update a task |
-| PUT | `/api/tasks/:id/assign` | Authenticated | Assign a task to the current user according to role permissions |
-| DELETE | `/api/tasks/:id` | Authenticated | Delete a task |
+| Method | Endpoint                | Access        | Description                                                     |
+| ------ | ----------------------- | ------------- | --------------------------------------------------------------- |
+| POST   | `/api/tasks`            | Authenticated | Create a task                                                   |
+| GET    | `/api/tasks/my`         | Authenticated | Get tasks available to the current user                         |
+| GET    | `/api/tasks/:id`        | Authenticated | Get a specific task                                             |
+| PUT    | `/api/tasks/:id`        | Authenticated | Update a task                                                   |
+| PUT    | `/api/tasks/:id/assign` | Authenticated | Assign a task to the current user according to role permissions |
+| DELETE | `/api/tasks/:id`        | Authenticated | Delete a task                                                   |
 
 ### User Dashboard
 
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| GET | `/api/dashboard/user` | Authenticated | Get task statistics for the current user |
+| Method | Endpoint              | Access        | Description                              |
+| ------ | --------------------- | ------------- | ---------------------------------------- |
+| GET    | `/api/dashboard/user` | Authenticated | Get task statistics for the current user |
 
 ### Administrator
 
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| GET | `/api/admin/dashboard` | Admin | Get system-wide dashboard statistics |
-| GET | `/api/admin/users` | Admin | Get all normal users |
-| GET | `/api/admin/tasks` | Admin | Get all tasks |
-| GET | `/api/admin/tasks?status=todo` | Admin | Filter tasks by status |
-| GET | `/api/admin/tasks?assignedUser=USER_ID` | Admin | Filter tasks by assigned user |
-| PUT | `/api/admin/tasks/:id/assign` | Admin | Assign or reassign a task |
-| PUT | `/api/admin/tasks/:id/unassign` | Admin | Remove the current task assignment |
+| Method | Endpoint                                | Access | Description                          |
+| ------ | --------------------------------------- | ------ | ------------------------------------ |
+| GET    | `/api/admin/dashboard`                  | Admin  | Get system-wide dashboard statistics |
+| GET    | `/api/admin/users`                      | Admin  | Get all normal users                 |
+| GET    | `/api/admin/tasks`                      | Admin  | Get all tasks                        |
+| GET    | `/api/admin/tasks?status=todo`          | Admin  | Filter tasks by status               |
+| GET    | `/api/admin/tasks?assignedUser=USER_ID` | Admin  | Filter tasks by assigned user        |
+| PUT    | `/api/admin/tasks/:id/assign`           | Admin  | Assign or reassign a task            |
+| PUT    | `/api/admin/tasks/:id/unassign`         | Admin  | Remove the current task assignment   |
 
 ### Authorization
 
@@ -379,11 +377,11 @@ This ensures that task status changes are persisted in the database rather than 
 
 ### Supported Status Values
 
-| Status | Description |
-|---|---|
-| `todo` | Task has not been started |
+| Status  | Description                   |
+| ------- | ----------------------------- |
+| `todo`  | Task has not been started     |
 | `doing` | Task is currently in progress |
-| `done` | Task has been completed |
+| `done`  | Task has been completed       |
 
 ## Security
 
@@ -443,11 +441,71 @@ Taskly is designed to be deployed as two separate applications:
 User Browser
      │
      ▼
-Frontend Application
+Vercel
+React + Vite Frontend
      │
      │ REST API requests
      ▼
-Backend Application
+SnapDeploy
+Node.js + Express Backend
      │
+     │ MongoDB connection
      ▼
 MongoDB Atlas
+Production Database
+```
+
+## Screenshots
+
+The following screenshots demonstrate the main features and interfaces of Taskly.
+
+### Landing Page
+
+![Taskly Landing Page](screenshots/taskly-landing-page.png)
+![Taskly Landing Page Features](screenshots/landing-page-feature.png)
+
+### Authentication
+
+![Taskly Register Page](screenshots/taskly-register-page.png)
+![Taskly Login Page](screenshots/taskly-login-page.png)
+
+### User Dashboard
+
+![Taskly User Dashboard](screenshots/user-dashboard.png)
+
+### Task Board
+
+![Taskly Task Board](screenshots/user-taskboard.png)
+
+The task board demonstrates the three task statuses: To Do, Doing, and Done, along with drag-and-drop task management.
+
+### Admin Dashboard
+
+![Taskly Admin Dashboard](screenshots/admin-dashboard.png)
+
+### Admin Task Management
+
+![Taskly Admin Task Management](screenshots/admin-tasks-table.png)
+
+The administrator task management interface allows administrators to view, filter, assign, reassign, and unassign tasks.
+
+### Admin User Management
+
+![Taskly Admin User Management](screenshots/admin-users-table.png)
+
+## Future Improvements
+
+If the application were developed further, possible improvements could include:
+
+- Real-time task updates using WebSockets.
+- Task due dates, priorities, and labels.
+- Task comments and activity history.
+- Email notifications for task assignments.
+- More advanced reporting and analytics.
+- Automated testing for frontend and backend functionality.
+
+## Author
+
+**Fathima Hishma**
+
+Taskly was developed as part of a Software Engineer Intern Technical Assignment.
